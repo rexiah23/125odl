@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Load your custom font from the .ttf file in public/fonts */
+@font-face {
+  font-family: 'Montesori Alt Black';
+  src: url('/fonts/montesori-alt-black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-black;
+    font-family: 'Montesori Alt Black', sans-serif;
+    text-transform: uppercase;
+    font-size: calc(1rem * var(--scale-factor)); /* Apply scale factor */
+  }
+  h2 {
+    font-size: calc(3rem * var(--scale-factor)); /* Apply scale factor */
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-navy-600 to-navy-500 hover:from-navy-700 hover:to-navy-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-sm hover:shadow relative overflow-hidden;
+    padding: calc(0.75rem * var(--scale-factor)) calc(1.5rem * var(--scale-factor)); /* Apply scale factor */
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-gold-100 to-gold-50 hover:from-gold-200 hover:to-gold-100 text-gold-800 font-semibold rounded-lg border border-gold-200 transition-all duration-300 shadow-sm hover:shadow;
+    padding: calc(0.75rem * var(--scale-factor)) calc(1.5rem * var(--scale-factor)); /* Apply scale factor */
+  }
+
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-200 via-gold-400 to-gold-200 bg-clip-text text-transparent;
+  }
+
+  .premium-card {
+    @apply relative overflow-hidden rounded-xl border border-navy-200 bg-gradient-to-b from-white to-navy-50/10;
+  }
+
+  .premium-border {
+    @apply border border-navy-200 hover:border-navy-300 transition-colors;
+  }
+
+  .premium-text {
+    @apply text-navy-600;
+  }
+
+  .premium-badge {
+    @apply bg-gradient-to-r from-navy-500/10 to-navy-600/10 text-navy-700 border border-navy-200;
+  }
+
+  .nav-link {
+    @apply text-lg text-gray-900 hover:text-navy-500 font-medium transition-colors;
+    font-size: calc(1rem * var(--scale-factor)); /* Apply scale factor */
+  }
+
+  .status-badge {
+    @apply bg-navy-50 text-navy-700 border border-navy-200 rounded-full flex items-center gap-2;
+    padding: calc(0.5rem * var(--scale-factor)) calc(1rem * var(--scale-factor)); /* Apply scale factor */
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: calc(0.5rem * var(--scale-factor));
+  height: calc(0.5rem * var(--scale-factor));
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-navy-500 to-navy-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gradient-to-b from-navy-600 to-navy-700;
+}
+
+/* Premium animations */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 215, 0, 0.2),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  to {
+    left: 200%;
+  }
+}
+
+/* Logo glow effect */
+.logo-glow {
+  position: relative;
+}
+
+.logo-glow::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(26, 35, 126, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logo-glow:hover::after {
+  opacity: 1;
+}
+
+body {
+  font-family: 'Your Typekit Font Name', sans-serif;
+}
+
+:root {
+  --scale-factor: 1; /* Adjust this value to scale components */
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.flip-animation {
+  animation: flip 0.3s ease-in-out;
+}

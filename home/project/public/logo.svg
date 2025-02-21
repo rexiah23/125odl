@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Grid Background -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#16a34a" stroke-width="0.5" stroke-opacity="0.2"/>
+    </pattern>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#D97706;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#92400E;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with grid pattern -->
+  <rect width="200" height="200" fill="url(#grid)"/>
+  
+  <!-- Ship Body with gold accents -->
+  <path d="M 30 120 L 170 120 L 160 140 L 40 140 Z" fill="#16a34a"/>
+  <path d="M 35 125 L 165 125 L 158 135 L 42 135 Z" fill="url(#goldGradient)" opacity="0.6"/>
+  
+  <!-- Ship Deck with gold trim -->
+  <path d="M 50 100 L 150 100 L 170 120 L 30 120 Z" fill="#16a34a"/>
+  <path d="M 55 105 L 145 105 L 160 115 L 40 115 Z" fill="url(#goldGradient)" opacity="0.6"/>
+  
+  <!-- Container Stack 1 with gold highlights -->
+  <rect x="60" y="70" width="20" height="30" fill="#16a34a"/>
+  <rect x="85" y="70" width="20" height="30" fill="#16a34a"/>
+  <rect x="110" y="70" width="20" height="30" fill="#16a34a"/>
+  <rect x="62" y="72" width="16" height="2" fill="url(#goldGradient)" opacity="0.6"/>
+  <rect x="87" y="72" width="16" height="2" fill="url(#goldGradient)" opacity="0.6"/>
+  <rect x="112" y="72" width="16" height="2" fill="url(#goldGradient)" opacity="0.6"/>
+  
+  <!-- Container Stack 2 with gold accents -->
+  <rect x="70" y="45" width="20" height="25" fill="#16a34a"/>
+  <rect x="95" y="45" width="20" height="25" fill="#16a34a"/>
+  <rect x="72" y="47" width="16" height="2" fill="url(#goldGradient)" opacity="0.6"/>
+  <rect x="97" y="47" width="16" height="2" fill="url(#goldGradient)" opacity="0.6"/>
+  
+  <!-- Bridge with gold details -->
+  <path d="M 120 40 L 140 40 L 140 100 L 120 100 Z" fill="#16a34a"/>
+  <path d="M 122 42 L 138 42 L 138 98 L 122 98 Z" fill="url(#goldGradient)" opacity="0.3"/>
+  
+  <!-- Crane with gold highlights -->
+  <path d="M 135 35 L 150 35 L 150 45 L 135 45 Z" fill="#16a34a"/>
+  <path d="M 145 30 L 160 30 L 155 50 L 145 50 Z" fill="#16a34a"/>
+  <path d="M 137 37 L 148 37 L 148 43 L 137 43 Z" fill="url(#goldGradient)" opacity="0.6"/>
+  
+  <!-- Water Lines with gold shimmer -->
+  <path d="M 10 150 Q 50 140 100 150 Q 150 160 190 150" stroke="#16a34a" stroke-width="3" fill="none"/>
+  <path d="M 10 160 Q 50 150 100 160 Q 150 170 190 160" stroke="url(#goldGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M 10 170 Q 50 160 100 170 Q 150 180 190 170" stroke="#16a34a" stroke-width="1" fill="none" opacity="0.3"/>
+  
+  <!-- Grid Overlay with gold accents -->
+  <g opacity="0.1">
+    <line x1="0" y1="40" x2="200" y2="40" stroke="url(#goldGradient)" stroke-width="1"/>
+    <line x1="0" y1="80" x2="200" y2="80" stroke="#16a34a" stroke-width="1"/>
+    <line x1="0" y1="120" x2="200" y2="120" stroke="url(#goldGradient)" stroke-width="1"/>
+    <line x1="0" y1="160" x2="200" y2="160" stroke="#16a34a" stroke-width="1"/>
+    <line x1="40" y1="0" x2="40" y2="200" stroke="url(#goldGradient)" stroke-width="1"/>
+    <line x1="80" y1="0" x2="80" y2="200" stroke="#16a34a" stroke-width="1"/>
+    <line x1="120" y1="0" x2="120" y2="200" stroke="url(#goldGradient)" stroke-width="1"/>
+    <line x1="160" y1="0" x2="160" y2="200" stroke="#16a34a" stroke-width="1"/>
+  </g>
+</svg>
