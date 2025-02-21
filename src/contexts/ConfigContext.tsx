@@ -32,7 +32,7 @@ export function ConfigProvider({ children }: ConfigProviderProps) {
   useEffect(() => {
     async function fetchConfig() {
       try {
-        const response = await fetch('http://localhost:4000/config');
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/config`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

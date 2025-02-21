@@ -38,7 +38,7 @@ export function Home() {
   useEffect(() => {
     async function fetchRecommendedCars() {
       try {
-        const response = await fetch('http://localhost:4000/cars/fetchRecommendedCars');
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/fetchRecommendedCars`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
