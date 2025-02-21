@@ -32,7 +32,7 @@ export function ConfigProvider({ children }: ConfigProviderProps) {
   useEffect(() => {
     async function fetchConfig() {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/config`);
+        const response = await fetch(`https://sg-supercars.onrender.com/config`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

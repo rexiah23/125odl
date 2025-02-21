@@ -20,7 +20,7 @@ export function CarDetails() {
   useEffect(() => {
     async function fetchCarDetails() {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/${carId}`);
+        const response = await fetch(`https://sg-supercars.onrender.com/cars/${carId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
