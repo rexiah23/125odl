@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Load your custom font from the .ttf file in public/fonts */
+@font-face {
+  font-family: 'Montesori Alt Black';
+  src: url('/fonts/montesori-alt-black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --scale-factor: 0.85; /* Reduced scale factor for better readability */
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-black;
+    font-family: 'Montesori Alt Black', sans-serif;
+    /* text-transform: uppercase; */
+  }
+
+  /* Consistent text scaling */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+    font-size: calc(2.5rem * var(--scale-factor));
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+    font-size: calc(2rem * var(--scale-factor));
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold;
+    font-size: calc(1.5rem * var(--scale-factor));
+  }
+
+  p {
+    @apply text-base md:text-lg;
+    font-size: calc(1rem * var(--scale-factor));
+  }
+}
+
+@layer components {
+  /* Consistent spacing */
+  .section-padding {
+    @apply py-12 md:py-16;
+  }
+
+  .content-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-margin {
+    @apply my-8 md:my-12;
+  }
+
+  /* Consistent card styles */
+  .card {
+    @apply bg-zinc-900 rounded-lg border border-zinc-800 p-6;
+  }
+
+  .card-hover {
+    @apply hover:border-green-500/30 transition-all duration-300 transform hover:scale-[1.01];
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-green-500 hover:bg-green-600 text-black font-bold transition-colors;
+    padding: calc(0.75rem * var(--scale-factor)) calc(1.5rem * var(--scale-factor));
+    font-size: calc(1rem * var(--scale-factor));
+  }
+
+  .btn-secondary {
+    @apply bg-zinc-800 hover:bg-zinc-700 text-white font-bold border border-zinc-700 transition-colors;
+    padding: calc(0.75rem * var(--scale-factor)) calc(1.5rem * var(--scale-factor));
+    font-size: calc(1rem * var(--scale-factor));
+  }
+
+  /* Form input styles */
+  .input {
+    @apply bg-zinc-800 text-white border border-zinc-700 rounded-lg focus:outline-none focus:border-green-500;
+    padding: calc(0.5rem * var(--scale-factor)) calc(0.75rem * var(--scale-factor));
+    font-size: calc(1rem * var(--scale-factor));
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-white hover:text-green-400 transition-colors;
+    font-size: calc(1rem * var(--scale-factor));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: calc(0.5rem * var(--scale-factor));
+  height: calc(0.5rem * var(--scale-factor));
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-600 rounded-full hover:bg-zinc-500;
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Zoom cursor styles */
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #10b981;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #10b981;
+  border-radius: 50%;
+  cursor: pointer;
+}
